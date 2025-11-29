@@ -15,7 +15,7 @@ def get_args_parser():
     
     
     parser.add_argument('--source-img', default='./register_img/CQ500CT432_25.png', type=str, help='source_dir')
-    parser.add_argument('--mls-txt', default='/home/chihchieh/projects/taming_mls/shift_stat.pkl', type=str, help='json_dir')
+    parser.add_argument('--mls-txt', default='./shift_stat.pkl', type=str, help='json_dir')
     parser.add_argument('--orig-dir', default= '/home/chihchieh/retrival_anomaly_detection/mls_file/cq/shift', type=str, help='json_dir')
     parser.add_argument('--save-path', default='/home/chihchieh/retrival_anomaly_detection/mls_file/cq/shift_register', type=str, help='save_img_dir')
     parser.add_argument('--batch-size', default=300, type=int, help='batch size')
