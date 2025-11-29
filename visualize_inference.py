@@ -99,7 +99,7 @@ def main(configs, checkpoint_path=None, latent_path = None, png_dir= None, outpu
     ).cuda()
 
 
-    latent_checkpoint = torch.load(args.latent_path)[args.net_type] # "ema_model"
+    latent_checkpoint = torch.load(args.latent_path)['net_model'] 
     net_model.load_state_dict(latent_checkpoint)
     net_model.eval()
 
@@ -117,7 +117,6 @@ def main(configs, checkpoint_path=None, latent_path = None, png_dir= None, outpu
             "Warning: parallel training is performing slightly worse than single GPU training due to statistics computation in dataparallel. We recommend to train over a single GPU, which requires around 8 Gb of GPU memory."
         )
         net_model = torch.nn.DataParallel(net_model)
-        ema_model = torch.nn.DataParallel(ema_model)
 
     for i, (x0_input, path_code) in enumerate(eval_loader):
         x0_input = x0_input.cuda()            
@@ -171,7 +170,6 @@ def get_args_parser(add_help: bool = True):
         type=str,
         help="image directory",
     )
-
 
 
     return parser
