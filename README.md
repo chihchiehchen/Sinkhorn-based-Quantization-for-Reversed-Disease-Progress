@@ -17,3 +17,6 @@ To visualize the reversed disease progress, run:
 ```
 python visualize_inference.py   --config_file ./optvq_config.yaml --checkpoint_path ./checkpoint.pth.epoch413_curr --latent-path otcfmnet_CXR_weights_step_20000.pt  --png_dir <Your ing dirs > --output_dir <your output dir>
 ```
+Here is the demo reversed disease progress:
+
+<img src="cq_demo/net_model_generated_FM_images_step_0_49_0.png" width="130"> <img src="cq_demo/net_model_generated_FM_images_step_0_49_20.png" width="130"> <img src="cq_demo/net_model_generated_FM_images_step_0_49_40.png" width="130"> <img src="cq_demo/net_model_generated_FM_images_step_0_49_60.png" width="130"> <img src="cq_demo/net_model_generated_FM_images_step_0_49_80.png" width="130"> <img src="cq_demo/net_model_generated_FM_images_step_0_49_99.png" width="130">
